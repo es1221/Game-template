@@ -3,7 +3,93 @@
 <!doctype html> <!-- This first line tells browsers to expect modern standard html 5 -->
 <html lang="en-gb"> <!-- This is indicates the page is written in British English, useful for accessibility -->
 <meta charset="utf-8"> <!-- This indicates how the file is encoded. utf-8 is standard -->
-<title>Your Web-app Title</title> <!-- All pages need a title, this will be displayed in the browser's title bar -->
+<title>Farm Yard</title> <!-- All pages need a title, this will be displayed in the browser's title bar -->
 <link rel="stylesheet" href="default.css"> <!-- Import style sheet – default.css -->
 <link rel="icon" href="./assets/favicon.png"> <!-- Import 'Favorites Icon' – favicon.png -->
 <script type="module" src="main.js"></script> <!-- Load the main script. Must be type="module". Have only one of these -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<header>
+
+    <h1 id="title"> Farm Yard </h1>
+    <a href="/docs/TicTacToe.html">API Documentation</a>
+
+</header>
+
+<body>
+    <div class="start-game" id='start-game-visible'>
+        <h2 class="text-light">Select 2 Animals</h2>
+
+
+        <div class="row">
+            <div class="column">
+                <button id="sheep" value="1">
+                <img src="images/sheep2.png" style="max-width:100%" class="sheep" data-id="sheep" width="200" height="200" alt="">
+            </button>
+            </div>
+            <div class="column">
+                <button id="chick" value="2">
+                <img src="images/chick.png" style="max-width:100%" class="chick" data-id="chick" width="160" height="210" alt="">
+            </button>
+            </div>
+            <div class="column">
+                <button id="pig" value="3">
+                <img src="images/pig2.png" style="max-width:100%" class="pig" data-id="pig" width="190" height="210" alt="">
+            </button>
+            </div>
+             <div class="column">
+                <button id="cow" value="4">
+                    <img src="images/cow2.png" style="max-width:100%"  class="cow" data-id="cow" width="200" height="200" alt="">
+                </button>
+            </div>
+        </div>
+
+
+
+
+        <button class="primary-btn" id="start-btn"> Start Game</button>
+
+
+    </div>
+
+
+<!--game board-->
+<div class="container">
+    <div class="board " id="board">
+        <div class="block" id = '0' data-cell></div>
+        <div class="block" id = '1' data-cell></div>
+        <div class="block" id = '2' data-cell></div>
+        <div class="block" id = '3'data-cell></div>
+        <div class="block" id = '4'data-cell></div>
+        <div class="block" id = '5'data-cell></div>
+        <div class="block" id = '6'data-cell></div>
+        <div class="block" id = '7'data-cell></div>
+        <div class="block" id = '8'data-cell></div>
+
+
+    </div>
+
+</div>
+
+<!-- Draw window -->
+
+<div class="draw-msg " id="drawMsg">
+    <div class="draw">
+        <h1 class="text-center">Draw !</h1>
+</div>
+    <button id="drawBtn" class="primary-btn">Restart</button>
+</div>
+
+<!-- winner window -->
+<div class="winner-msg " id="winnerMsg">
+    <h1 class="text-center">Winner!</h1>
+    <div class="winner"></div>
+    <button id="restartBtn" class="primary-btn">Restart</button>
+</div>
+
+</body>
+</html>

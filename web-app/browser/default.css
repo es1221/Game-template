@@ -1,0 +1,288 @@
+
+
+
+*>*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    font-family: 'Poppins', sans-serif;
+
+    /*images*/
+    --sheep: url('./images/sheep2.png');
+    --cow: url('./images/cow2.png');
+    --pig: url('./images/pig2.png');
+    --chick: url('./images/chick.png');
+}
+
+@font-face {
+    font-family:'Poppins', sans-serif ;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+}
+
+#title
+ {
+    font-size: 72px;
+    font-family:'Luckiest Guy', cursive;
+    text-align: center;
+    color: #42280E;
+}
+
+#hidden{
+    display: none;
+}
+.hidden{
+    display: none;
+}
+
+body{
+    background:#7ec850
+}
+
+.column{
+    float: left;
+    width: 25%;
+    padding:5px ;
+}
+
+.row::after {
+    content: "";
+    clear:both;
+    display: table;
+}
+.start-game{
+
+
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.primary-btn{
+    border:none;
+    background: #add8e6;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #000000;
+    margin-top: 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+
+
+}
+
+.text-center{
+    text-align:center;
+}
+
+.primary-btn:hover{
+    background: #f0fd0f
+}
+
+.row{
+    cursor:url( ./images/chick.png), pointer;
+    cursor:url( ./images/cow2.png), pointer;
+    cursor:url( ./images/pig2.png), pointer;
+    cursor:url( ./images/sheep2.png), pointer;
+
+}
+
+.cow:hover{
+    background: #f0fd0f
+}
+.sheep:hover{
+    background: #f0fd0f
+}
+.chick:hover{
+    background: #f0fd0f
+}
+.pig:hover{
+    background: #f0fd0f
+}
+
+.start-game.hide{
+    display:none;
+}
+
+/*Main Game Board*/
+ .container{
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#board{
+    display:grid;
+    grid-template-columns: repeat(3,auto);
+    background: #000000;
+    row-gap: 3px;
+    column-gap: 3px;
+}
+
+.block{
+    width: 150px;
+    height: 150px;
+    background: #7ec850;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+
+.block.x,.block.z,
+.block.y,.block.w{
+    cursor: not-allowed;
+}
+
+/* 
+.block:not(.x):not(.y):hover{
+    background-image: url('/images/chick.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+
+}
+.block:not(.z):not(.w):hover{
+    background-image: url('/images/cow2.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+
+}
+
+.block:not(.y):not(.x):hover{
+    background-image: url('/images/pig2.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+
+}
+
+ .block:not(.w):not(.z):hover{
+    background-image: url('/images/sheep2.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+
+} */
+
+.blocksheep{
+  background: #7ec850;
+  background-image: url('/images/sheep2.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.blockchick{
+  background: #7ec850;
+  background-image: url('/images/chick.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.blockcow{
+  background: #7ec850;
+  background-image: url('/images/cow2.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.blockpig{
+  background: #7ec850;
+  background-image: url('/images/pig2.png');
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/*
+x is chick
+y is pig
+z is cow
+w is sheep */
+
+.block.x{
+    background-image: url('/images/chick.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.block.y{
+    background-image: url('/images/pig2.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.block.z{
+    background-image: url('/images/cow2.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.block.w{
+    background-image: url('/images/sheep2.png');
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Draw message window */
+.start-game, .draw-msg, .winner-msg{
+    position:fixed;
+    top: 0;
+    left:0;
+    bottom:0;
+    right: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #808080;
+    opacity: 0.9;
+}
+
+.draw-msg, .winner-msg{
+    display:none;
+}
+
+
+.draw-msg.show, .winner-msg.show{
+    display: flex;
+}
